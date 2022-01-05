@@ -1,0 +1,87 @@
+html {
+  font-size: 16px;
+}
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'montserrat', 'Nunito', sans-serif;
+
+  /* font-size: calc(8px + 3vw / 2); */
+  font-weight: 300;
+}
+p {
+  font-weight: lighter;
+}
+h1,
+h2,
+h3 {
+  /* font-family: 'Nunito', sans-serif; */
+  font-weight: bold;
+}
+h1 {
+  font-size: calc(12px + 3vw / 2);
+}
+h2 {
+  font-size: calc(10px + 3vw / 2);
+}
+h3 {
+  font-size: calc(8px + 3vw / 2);
+}
+
+input {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+input,
+textarea,
+select,
+button {
+  width: 150px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+button,
+label,
+input,
+select,
+progress,
+meter {
+  display: block;
+  font-family: inherit;
+  font-size: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px;
+  height: 30px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+button {
+  width: 60%;
+  margin: 0 auto;
+}
