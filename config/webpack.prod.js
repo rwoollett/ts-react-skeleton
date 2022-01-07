@@ -24,12 +24,6 @@ const prodConfig = {
     },
   },
   module: {
-    // rules: [
-    //   { test: /\.tsx?$/, 
-    //     exclude: /node_modules/,
-    //     use: [{ loader: 'ts-loader', options: { transpileOnly: false}}]
-    //   }
-    // ]
   },
   plugins: [
    //new BundleAnalyzerPlugin()

@@ -2,7 +2,7 @@ import { hot } from 'react-hot-loader/root';
 import React from 'react';
 import Hello from "./Hello";
 import HelloWithHooks from "./HelloWithHooks";
-import style from '../scss/labshome.scss';
+import '../scss/labshome.scss';
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,14 +13,9 @@ import {
 
 interface AppProps {
   title: string;
-  //  done?: boolean;
 }
 
 class App extends React.Component<AppProps, unknown> {
-
-  // static defaultProps: Partial<AppProps> = { 
-  //   done: false,
-  // }
 
   constructor(props: AppProps) {
     super(props);
@@ -36,8 +31,8 @@ class App extends React.Component<AppProps, unknown> {
             <Route exact path="/" render={() => <HelloWithHooks />} />
             <Redirect to="/" />
           </Switch>
-          <div className={style.footer}>
-            <div className={style.container}>
+          <div className="footer">
+            <div className="container">
                <p>The Javascript/ Typescript laboratories. 
                 Contact: Programming Laboratory.</p>
             </div>

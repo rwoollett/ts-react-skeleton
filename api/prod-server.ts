@@ -18,7 +18,7 @@ var api = require('./api');
   app.use('/', express.static('dist'));
 
   // We define the API routes here
-  api.defineApi(app);
+  //api.defineApi(app);
 
   app.listen(8080, function () {
     console.log('Both front-end and API are up!')

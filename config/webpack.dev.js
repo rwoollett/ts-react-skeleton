@@ -15,8 +15,6 @@ const devConfig = {
   devServer: {
     host: env.devServer.host || 'localhost',
     port: env.devServer.port || 3000,
-
-    //contentBase: path.resolve(__dirname, '../dist'),
     hot: true,
     proxy: {
         '/api': {
@@ -24,20 +22,12 @@ const devConfig = {
         secure: false
         }
     },
-    //publicPath: '/',
     historyApiFallback: {
+      disableDotRule: true,
       index: '/index.html',
     },
-    watchFiles: { paths: '/src/**' },
   },
   module: {
-    // Use babel/preset typescript to do compiling with no type check (webpack.common)
-    // rules: [
-    //   { test: /\.tsx?$/, 
-    //     exclude: /node_modules/,
-    //     use: [{ loader: 'ts-loader', options: { transpileOnly: false}}]
-    //   }
-    // ]
   },
   plugins: [
   ]

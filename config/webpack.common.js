@@ -10,11 +10,13 @@ module.exports = {
       app: [path.resolve(__dirname, '../src/bootstrap.tsx')]
     },
     resolve: {
-      extensions: ['.ts', '.tsx', '.js'],
+      extensions: ['.ts', '.tsx', '.js', ".scss"],
       alias: {
-        components: path.resolve(__dirname, './src/components/')
-      }
+        components: path.resolve(__dirname, '../src/components/')
+      },
+      modules: ["../node_modules"]
     },
+    devtool: "source-map",
     module: {
       rules: [
         {
@@ -22,22 +24,33 @@ module.exports = {
           type: 'asset/resource'
   
         },
+        { test: /\.tsx?$/, 
+          exclude: /node_modules/,
+          use: [
+            { 
+              loader: 'ts-loader', 
+              options: { 
+                transpileOnly: true
+              }
+            }
+          ]
+        },
+        { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
         {
-          test: /\.tsx?$/,
+          test: /\.js$/,
           exclude: /node_modules/,
           use: ['babel-loader'],
         },
         { 
           test: /\.s?css$/,
-          include: path.join(__dirname, '../src/scss'),
           use: [
             MiniCssExtractPlugin.loader, 
             { 
-              loader: '@teamsupercell/typings-for-css-modules-loader'
-            },
-            { 
               loader: 'css-loader',
-              options: { modules: true }
+              options: { 
+                importLoaders: 2,
+                //modules: false // sliding panel need this false
+              }
             },
             'postcss-loader',
             'sass-loader'
