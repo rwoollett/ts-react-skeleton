@@ -33,6 +33,7 @@ class App extends React.Component<AppProps, unknown> {
           </Switch>
           <div className="footer">
             <div className="container">
+              {this.props.title}
                <p>The Javascript/ Typescript laboratories. 
                 Contact: Programming Laboratory.</p>
             </div>
