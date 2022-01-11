@@ -9,6 +9,7 @@
     "dev-api": "ts-node --project api/tsconfig.json api/dev-api.ts",
     "prod": "ts-node --project api/tsconfig.json api/prod-server.ts",
     "lint": "eslint src",
+    "heroku-postbuild": "npm run build",
     "check-types": "tsc"
   },
   "repository": {

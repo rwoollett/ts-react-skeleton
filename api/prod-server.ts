@@ -20,6 +20,6 @@ var api = require('./api');
   // We define the API routes here
   //api.defineApi(app);
 
-  app.listen(8080, function () {
+  app.listen(3000, function () {
     console.log('Both front-end and API are up!')
   });
