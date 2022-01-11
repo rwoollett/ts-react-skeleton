@@ -1,4 +1,4 @@
-import { hot } from 'react-hot-loader/root';
+//import { hot } from 'react-hot-loader/root';
 import React from 'react';
 import Hello from "./Hello";
 import HelloWithHooks from "./HelloWithHooks";
@@ -44,4 +44,4 @@ class App extends React.Component<AppProps, unknown> {
   }
 }
 
-export default hot(App);
+export default App;

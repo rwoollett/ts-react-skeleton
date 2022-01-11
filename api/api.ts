@@ -1,6 +1,5 @@
 import express from 'express';
 import homepage from './homepage.json';
-import { nanoid } from '@reduxjs/toolkit'
 import { sentence, article } from 'txtgen'
 import seedrandom from 'seedrandom'
 
@@ -36,7 +35,7 @@ module.exports = {
     app.post('/api/v1/posts', function (req, res) {
       res.json(
         {
-          id: nanoid(),
+          id: 10,
           date: new Date(),
           title: req.body.post.title,
           content: req.body.post.content,
@@ -70,7 +69,7 @@ module.exports = {
       res.json(
         [
           {
-            id: nanoid(),
+            id: 10,
             date: new Date(2021, 5, 12, 16, 30, 12),
             title: "Some tough spiders are thought of simply as figs",
             content: "Their bird was, in this moment, a silly bear. They were lost without the amicable kiwi that composed their fox. A peach is an amicable crocodile. A tidy fox without sharks is truly a scorpion of willing cats. Shouting with happiness, a currant is a wise currant!",
@@ -84,7 +83,7 @@ module.exports = {
             },
           },
           {
-            id: nanoid(),
+            id: 20,
             date: new Date(2021, 5, 12, 16, 30, 12),
             title: "A horse can hardly be considered an efficient alligator without also being a rat!",
             content: "A grapes is the cranberry of a grapefruit; In ancient times the octopus is a persimmon. Few can name an enchanting fish that isn't a practical dog. A pear is a giraffe's grapes. A deer can hardly be considered a considerate fox without also being a chicken. As far as we can estimate, the kumquat of a panda becomes a decisive alligator? One cannot separate tangerines from forceful alligators?",
@@ -98,7 +97,7 @@ module.exports = {
             },
           },
           {
-            id: nanoid(),
+            id: 30,
             date: new Date(2021, 5, 12, 16, 30, 12),
             title: sentence(),
             content: article(1),
@@ -146,11 +145,12 @@ module.exports = {
 
       // Create N random notifications. We won't bother saving these
       // in the DB - just generate a new batch and return them.
-      const notifications = [...Array(numNotifications)].map(() => {
+      const notifications = [...Array(numNotifications)].map((val,i) => {
         //const user = randomFromArray(schema.db.users)
+        console.log("What",i);
         const template = randomFromArray(notificationTemplates)
         return {
-          id: nanoid(),
+          id: i,
           date: new Date(),
           message: template,
           user: "300",
