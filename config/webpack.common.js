@@ -65,7 +65,21 @@ module.exports = {
       }),
       new HtmlWebpackPlugin({
         title: 'Labs Home',
-        template: './public/index.html'
+        template: './public/index.html',
+        favicon: './public/favicon.ico',
+        minify: {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeRedundantAttributes: true,
+          useShortDoctype: true,
+          removeEmptyAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          keepClosingSlash: true,
+          minifyJS: true,
+          minifyCSS: true,
+          minifyURLs: true,
+        },
+  
       }),
       new ESLintPlugin({
         extensions: ['ts','tsx']
