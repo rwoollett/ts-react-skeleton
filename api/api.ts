@@ -1,5 +1,5 @@
 import express from 'express';
-import homepage from './homepage.json';
+//import homepage from './homepage.json';
 import { sentence, article } from 'txtgen'
 import seedrandom from 'seedrandom'
 
@@ -27,10 +27,10 @@ const notificationTemplates = [
 module.exports = {
   defineApi: function (app: express.Express) {
 
-    app.get('/api/v1/homepage', function (req, res) {
-      res.json(homepage.homepage);
+    // app.get('/api/v1/homepage', function (req, res) {
+    //   res.json(homepage.homepage);
 
-    });
+    // });
 
     app.post('/api/v1/posts', function (req, res) {
       res.json(
