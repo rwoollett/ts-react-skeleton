@@ -7,16 +7,15 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: {
-      app: [path.resolve(__dirname, '../src/bootstrap.tsx')]
+      app: ['./src/bootstrap.tsx']
     },
     resolve: {
       extensions: ['.ts', '.tsx', '.js', ".scss"],
       alias: {
         components: path.resolve(__dirname, '../src/components/')
       },
-      modules: ["../node_modules"]
+      modules: ["node_modules"]
     },
-    devtool: "source-map",
     module: {
       rules: [
         {
@@ -35,7 +34,7 @@ module.exports = {
             }
           ]
         },
-        { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+      //  { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
         {
           test: /\.js$/,
           exclude: /node_modules/,

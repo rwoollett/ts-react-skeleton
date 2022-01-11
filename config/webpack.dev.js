@@ -11,7 +11,7 @@ const devConfig = {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/'
   },
-  devtool: 'source-map',
+  devtool: 'eval',
   devServer: {
     host: env.devServer.host || 'localhost',
     port: env.devServer.port || 3000,

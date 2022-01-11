@@ -7,20 +7,21 @@ const prodConfig = {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].bundle.js',
-    chunkFilename: '[name].[contenthash].bundle.js',
+    sourceMapFilename: "[name]-[contenthash].map",
+    chunkFilename: '[id].[chunkhash].bundle.js',
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/'
   },
   optimization: {
     splitChunks: {
       chunks: 'all',
-      cacheGroups: {
-        defaultVendor: {
-          test: /[\\/]node_modules[\\/]/,
-          priority: -10,
-          reuseExistingChunk: true
-        }
-      },
+      // cacheGroups: {
+      //   defaultVendor: {
+      //     test: /[\\/]node_modules[\\/]/,
+      //     priority: -10,
+      //     reuseExistingChunk: true
+      //   }
+      // },
     },
   },
   module: {
