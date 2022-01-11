@@ -24,8 +24,7 @@ const notificationTemplates = [
 ]
 
 
-module.exports = {
-  defineApi: function (app: express.Express) {
+const defineApi = function (app: express.Express) {
 
     // app.get('/api/v1/homepage', function (req, res) {
     //   res.json(homepage.homepage);
@@ -147,7 +146,6 @@ module.exports = {
       // in the DB - just generate a new batch and return them.
       const notifications = [...Array(numNotifications)].map((val,i) => {
         //const user = randomFromArray(schema.db.users)
-        console.log("What",i);
         const template = randomFromArray(notificationTemplates)
         return {
           id: i,
@@ -163,5 +161,7 @@ module.exports = {
 
     });
 
-  }
-}
+  };
+
+  export default defineApi;
+

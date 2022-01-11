@@ -18,7 +18,7 @@ const devConfig = {
     hot: true,
     proxy: {
         '/api': {
-        target: 'http://localhost:8081',
+        target: 'http://' + env.devApi.host + ':' + env.devApi.port,
         secure: false
         }
     },

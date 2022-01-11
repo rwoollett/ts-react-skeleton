@@ -3,17 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "concurrently --kill-others \"npm run start\" \"npm run dev-api\" ",
-    "predev": "tsc",
     "start": "webpack serve --config config/webpack.dev.js --mode=development",
+    "prebuild": "tsc",
     "build": "webpack --config config/webpack.prod.js --mode=production",
-    "dev-api": "node jsdist/api/dev-api.js",
-    "xxdev-xxapi": "ts-node --project api/tsconfig.json api/dev-api.ts",
-    "prod": "node jsdist/api/prod-server.js",
-    "oldprodold": "ts-node --project api/tsconfig.json api/prod-server.ts",
-    "lint": "eslint src",
-    "heroku-postbuild": "npm run build && tsc",
-    "check-types": "tsc"
+    "predev": "tsc",
+    "dev": "concurrently --kill-others \"npm run start\" \"npm run server\" ",
+    "heroku-postbuild": "npm run build",
+    "prod": "cross-env NODE_ENV=production node jsdist/api/server.js",
+    "server": "cross-env NODE_ENV=development node jsdist/api/server.js"
   },
   "repository": {
     "type": "git",
@@ -71,6 +68,7 @@
   },
   "dependencies": {
     "axios": "^0.21.4",
+    "cross-env": "^7.0.3",
     "express": "4.17.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
