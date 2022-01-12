@@ -21,13 +21,14 @@ app.use(express.json());
 // We serve the bundle folder, which
 // should contain an `index.html` and
 // a `bundle.js` file only.
-app.use(express.static(__dirname + '/dist'));
+//app.use(express.static(__dirname + '/dist'));
+app.use('/', express.static('dist'));
 
 // We define the API routes here
 defineApi(app);
-app.get(/.*/, function (req, res) {
-  res.sendFile(__dirname + '/dist/index.html');
-})
+// app.get(/.*/, function (req, res) {
+//   res.sendFile('./dist/index.html');
+// })
 
 app.listen(port, function () {
   console.log('Both front-end and API are up!', port)
