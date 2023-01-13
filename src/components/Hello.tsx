@@ -11,7 +11,7 @@ export default class Hello extends React.Component<HelloProps, unknown> {
   render(): JSX.Element  {
     return (
       <h1>
-        Hello from {this.props.compiler} and {this.props.framework}!
+        Hello World from {this.props.compiler} and {this.props.framework}!
       </h1>
     );
   }

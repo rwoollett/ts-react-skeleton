@@ -38,6 +38,6 @@ app.listen(port, function () {
     // default is a production mode to run server with bundled js and index.html
     // along with api served with node server (server.js)
     //   -- defined in package.json scripts.
-    console.log('Both front-end and API are up!', port)
+    console.log('Both front-end and API are now up!', port)
   }
 });

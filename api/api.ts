@@ -1,5 +1,5 @@
 import express from 'express';
-//import homepage from './homepage.json';
+import homepage from './homepage.json';
 import { sentence, article } from 'txtgen'
 import seedrandom from 'seedrandom'
 
@@ -18,7 +18,7 @@ const randomFromArray = (array:string[]) => {
 
 const notificationTemplates = [
   'poked you',
-  'says hi!',
+  'says h!',
   `is glad we're friends`,
   'sent you a gift',
 ]
@@ -26,10 +26,10 @@ const notificationTemplates = [
 
 const defineApi = function (app: express.Express) {
 
-    // app.get('/api/v1/homepage', function (req, res) {
-    //   res.json(homepage.homepage);
+    app.get('/api/v1/homepage', function (req, res) {
+      res.json(homepage.homepage);
 
-    // });
+    });
 
     app.post('/api/v1/posts', function (req, res) {
       res.json(
@@ -64,7 +64,6 @@ const defineApi = function (app: express.Express) {
     });
 
     app.get('/api/v1/posts', function (req, res) {
-      console.log("POST");
       res.json(
         [
           {

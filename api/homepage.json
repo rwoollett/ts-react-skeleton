@@ -1,7 +1,7 @@
 {
   "homepage" :
     { 
-      "title": "Laboratory of Computer Algorithms",
+      "title": "Laboratory Computer Algorithms",
       "description": "The Javascript/Typescript programming language is used to implement basic algorithms.",
       "navCards": [
         {"title": "Laboratory Collection", "catchPhrase": "Explore the laboratories of algorithms implemented with the JavaScript/Typescript computer programming language."},
