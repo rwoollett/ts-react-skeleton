@@ -1,8 +1,8 @@
 //import { hot } from 'react-hot-loader/root';
 import React from 'react';
-import Hello from "./Hello";
-import HelloWithHooks from "./HelloWithHooks";
-import '../scss/labshome.scss';
+import Hello from "./components/Hello";
+import HelloWithHooks from "./components/HelloWithHooks";
+import './scss/labshome.scss';
 import {
   BrowserRouter as Router,
   Switch,
