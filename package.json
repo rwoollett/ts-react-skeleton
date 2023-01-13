@@ -10,7 +10,7 @@
     "dev": "concurrently --kill-others \"npm run start\" \"npm run server\" ",
     "heroku-postbuild": "npm run build",
     "prod": "cross-env NODE_ENV=production PORT=8080 node jsdist/api/server.js",
-    "server": "cross-env NODE_ENV=development nodemon api/server.ts"
+    "server": "cross-env NODE_ENV=development node jsdist/api/server.js"
   },
   "repository": {
     "type": "git",
@@ -70,7 +70,7 @@
   "dependencies": {
     "axios": "^0.21.4",
     "cross-env": "^7.0.3",
-    "express": "4.17.1",
+    "express": "^4.17.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
