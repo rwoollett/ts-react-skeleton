@@ -9,7 +9,7 @@
     "predev": "tsc",
     "dev": "concurrently --kill-others \"npm run start\" \"npm run server\" ",
     "heroku-postbuild": "npm run build",
-    "prod": "cross-env NODE_ENV=production node jsdist/api/server.js",
+    "prod": "cross-env NODE_ENV=production PORT=8080 node jsdist/api/server.js",
     "server": "cross-env NODE_ENV=development node jsdist/api/server.js"
   },
   "repository": {
